@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +22,7 @@ body {
     min-height: 90vh;
     margin: auto;
     margin-top: 15px;
-    background: #1a1a1a;
+    background: #0f2f41;
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0px 10px 25px rgba(0,0,0,0.4);
@@ -39,6 +41,15 @@ body {
     font-size: 32px;
     font-weight: bold;
     border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.header-logo {
+    height: 50px;
+    width: auto;
 }
 
 .subheader {
@@ -57,7 +68,7 @@ body {
     right: 15px;
     top: 10px;
     color: #00ffff;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     text-align: right;
 }
@@ -98,13 +109,13 @@ body {
 }
 
 .box1 { background: #3498db; }
-.box2 { background: #1abc9c; }
+.box2 { background: #6f8c3e; }
 .box3 { background: #9b59b6; }
 .box4 { background: #e67e22; }
-.box5 { background: #e74c3c; }
+.box5 { background: #7e3c24; }
 .box6 { background: #16a085; }
 .box7 { background: #34495e; }
-.box8 { background: #2ecc71; }
+.box8 { background: #357b92; }
 
 .footer {
     position: absolute;
@@ -665,7 +676,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="dashboard">
 
     <div class="header-container">
-        <div class="header">COMBINED UTILITY DASHBOARD</div>
+        <div class="header">
+            <img src="" alt="Logo" class="header-logo" id="headerLogo">
+            <span>COMBINED UTILITY DASHBOARD</span>
+        </div>
         <div class="clock" id="clock"></div>
     </div>
 
@@ -674,18 +688,18 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="grid">
         <div class="box box1" onclick="openLink('https://pvijacxd.github.io/CVVRSFORM/')">CVVRS FORM</div>
         <div class="box box2" onclick="openLink('https://pvijacxd.github.io/cvvrsdashboard/')">CVVRS DASHBOARD</div>
-        <div class="box box3" onclick="openLink('link3')">UTILITY 3</div>
-        <div class="box box4" onclick="openLink('https://pvijacxd.github.io/spmdashboardgaruddata/')">SPM DASHBOARD</div>
+        <div class="box box3" onclick="openLink('https://teloc-cell-e-garud.vercel.app/')">E-GARUD</div>
+        <div class="box box4" onclick="openLink('https://raipurdivision.github.io/spmdashboard/')">SPM DASHBOARD</div>
         <!-- ✅ MEDHA button now opens modal -->
         <div class="box box5" onclick="openMedhaConverter()">MEDHA TEXT TO EXCEL CONVERTER</div>
-        <div class="box box6" onclick="openLink('link6')">RTIS DATA CONVERTER</div>
-        <div class="box box7" onclick="openLink('link7')">REPORT FORM</div>
+        <div class="box box6" onclick="openLink('https://pvijacxd.github.io/rtisconverter/')">RTIS DATA CONVERTER</div>
+        <div class="box box7" onclick="openLink('https://pvijacxd.github.io/locoreportform/')">REPORT FORM</div>
         <div class="box box8" onclick="openLink('link8')">UTILITY 8</div>
     </div>
 
     <div class="footer">
         Designed by Electric (OP), Raipur Division
-    </div>
+    </div>          
 
 </div>
 
