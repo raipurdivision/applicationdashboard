@@ -3,6 +3,11 @@
 
 
 
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +21,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0a0a0a;
+    background: #0f1419;
 }
 
 .dashboard {
@@ -24,7 +29,7 @@ body {
     min-height: 90vh;
     margin: auto;
     margin-top: 15px;
-    background: #0f2f41;
+    background: #1a2332;
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0px 10px 25px rgba(0,0,0,0.4);
@@ -37,8 +42,8 @@ body {
 
 .header {
     text-align: center;
-    background: #2c3e50;
-    color: #fff176;
+    background: #1a2332;
+    color: #b8ff00;
     padding: 12px;
     font-size: 32px;
     font-weight: bold;
@@ -47,6 +52,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 15px;
+    position: relative;
 }
 
 .header-logo {
@@ -54,24 +60,46 @@ body {
     width: auto;
 }
 
+.dark-mode-toggle {
+    position: absolute;
+    right: 15px;
+    background: #2d3748;
+    color: #ffffff;
+    border: 2px solid #4a5568;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background: #4a5568;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
 .subheader {
     text-align: center;
-    background: #34495e;
-    color: #fff176;
+    background: #1a2332;
+    color: #7dd3fc;
     padding: 8px;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: normal;
     border-radius: 0 0 10px 10px;
     margin-bottom: 25px;
+    border-bottom: 2px solid #d3d3d3;
+    padding-bottom: 12px;
 }
 
 .clock {
     position: absolute;
     right: 15px;
-    top: 10px;
-    color: #00ffff;
-    font-size: 16px;
-    font-weight: bold;
+    top: 50px;
+    color: #7dd3fc;
+    font-size: 14px;
+    font-weight: normal;
     text-align: right;
 }
 
@@ -82,49 +110,76 @@ body {
 }
 
 .box {
-    height: 90px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 8px;
     border-radius: 12px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
-    color: #fff176;
+    color: cyan;
     cursor: pointer;
     text-align: center;
     padding: 5px;
-    box-shadow: 
-        0 4px 8px rgba(255,255,255,0.4),
-        0 6px 15px rgba(255,255,255,0.3);
-    transition: all 0.2s ease;
-}
-
-.box:hover {
-    transform: translateY(-5px);
-    box-shadow: 
-        0 6px 12px rgba(255,255,255,0.6),
-        0 10px 20px rgba(255,255,255,0.4);
+    transition: all 0.3s ease;
+    background: #1a2035;
+    border: 1px solid #b8ff00;
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.4),
+        0 6px 20px rgba(184, 255, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -2px 8px rgba(0, 0, 0, 0.3);
+    transform: perspective(1000px) rotateX(2deg);
+    position: relative;
 }
 
 .box:active {
-    transform: translateY(2px);
+    transform: perspective(1000px) rotateX(0deg) translateY(2px);
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        0 3px 10px rgba(184, 255, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.box1 { background: #3498db; }
-.box2 { background: #6f8c3e; }
-.box3 { background: #9b59b6; }
-.box4 { background: #e67e22; }
-.box5 { background: #7e3c24; }
-.box6 { background: #16a085; }
-.box7 { background: #34495e; }
-.box8 { background: #357b92; }
+.box-icon {
+    font-size: 20px;
+}
+
+.box-icon-img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    filter: brightness(0.3) saturate(150%);
+}
+
+.box1 { background: #1a2035; border-color: #b8ff00; }
+.box2 { background: #1a2035; border-color: #b8ff00; }
+.box3 { background: #1a2035; border-color: #b8ff00; }
+.box4 { background: #1a2035; border-color: #b8ff00; }
+.box5 { background: #1a2035; border-color: #b8ff00; }
+.box6 { background: #1a2035; border-color: #b8ff00; }
+.box7 { background: #1a2035; border-color: #b8ff00; }
+.box8 { background: #1a2035; border-color: #b8ff00; }
+
+.box:hover {
+    transform: perspective(1000px) rotateX(5deg) translateY(-5px);
+    border-color: #b8ff00;
+    box-shadow:
+        0 8px 16px rgba(0, 0, 0, 0.5),
+        0 12px 30px rgba(184, 255, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(184, 255, 0, 0.6);
+}
 
 .footer {
     position: absolute;
     bottom: 10px;
     right: 15px;
     font-size: 12px;
-    color: #64b5f6;
+    color: #7dd3fc;
 }
 
 /* ========== MODAL STYLES ========== */
@@ -356,6 +411,91 @@ body {
 
 #chartContainer.show { display: block; }
 #speedDistanceChart { max-height: 400px; }
+
+/* ========== DARK MODE STYLES ========== */
+body.dark-mode {
+    background: #0a0e14;
+}
+
+body.dark-mode .dashboard {
+    background: #0f1419;
+}
+
+body.dark-mode .header {
+    background: #0f1419;
+}
+
+body.dark-mode .subheader {
+    background: #0f1419;
+}
+
+body.dark-mode .modal-box {
+    background: #2a2a2a;
+}
+
+body.dark-mode .converter-container {
+    background: #1e1e1e;
+}
+
+body.dark-mode .converter-container h1 {
+    color: #ffffff;
+}
+
+body.dark-mode .subtitle {
+    color: #aaaaaa;
+}
+
+body.dark-mode .upload-area {
+    background: #2a2a2a;
+    border-color: #667eea;
+}
+
+body.dark-mode .upload-area:hover {
+    background: #333333;
+}
+
+body.dark-mode .upload-text {
+    color: #ffffff;
+}
+
+body.dark-mode .upload-hint {
+    color: #888888;
+}
+
+body.dark-mode .file-info {
+    background: #2a2a2a;
+}
+
+body.dark-mode .file-name {
+    color: #ffffff;
+}
+
+body.dark-mode .chart-controls {
+    background: #2a2a2a;
+}
+
+body.dark-mode .checkbox-container label {
+    color: #ffffff;
+}
+
+body.dark-mode .time-input-wrapper label {
+    color: #aaaaaa;
+}
+
+body.dark-mode .time-input-wrapper input[type="time"],
+body.dark-mode .time-input-wrapper input[type="date"] {
+    background: #333333;
+    border-color: #555555;
+    color: #ffffff;
+}
+
+body.dark-mode #chartContainer {
+    background: #2a2a2a;
+}
+
+body.dark-mode .status-message {
+    color: #aaaaaa;
+}
 </style>
 
 <script>
@@ -373,6 +513,26 @@ function updateClock() {
 }
 
 setInterval(updateClock, 1000);
+
+/* ===== DARK MODE TOGGLE ===== */
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+
+    const btn = document.getElementById('darkModeBtn');
+    btn.textContent = isDarkMode ? '☀️ Light Mode' : '🌙 Dark Mode';
+}
+
+// Load dark mode preference on page load
+window.addEventListener('DOMContentLoaded', () => {
+    const darkMode = localStorage.getItem('darkMode');
+    if (darkMode === 'enabled') {
+        document.body.classList.add('dark-mode');
+        const btn = document.getElementById('darkModeBtn');
+        if (btn) btn.textContent = '☀️ Light Mode';
+    }
+});
 
 /* ===== MODAL OPEN/CLOSE ===== */
 function openMedhaConverter() {
@@ -679,7 +839,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <div class="header-container">
         <div class="header">
-            <img src="" alt="Logo" class="header-logo" id="headerLogo">
             <span>COMBINED UTILITY DASHBOARD</span>
         </div>
         <div class="clock" id="clock"></div>
@@ -688,21 +847,62 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="subheader">RAIPUR DIVISION , ELEC (OP)</div>
 
     <div class="grid">
-        <div class="box box1" onclick="openLink('https://pvijacxd.github.io/CVVRSFORM/')">CVVRS FORM</div>
-        <div class="box box2" onclick="openLink('https://pvijacxd.github.io/cvvrsdashboard/')">CVVRS DASHBOARD</div>
-        <div class="box box3" onclick="openLink('https://teloc-cell-e-garud.vercel.app/')">E-GARUD</div>
-        <div class="box box4" onclick="openLink('https://raipurdivision.github.io/spmdashboard/')">SPM DASHBOARD</div>
-        <!-- ✅ MEDHA button now opens modal -->
-        <div class="box box5" onclick="openMedhaConverter()">MEDHA TEXT TO EXCEL CONVERTER</div>
-        <div class="box box6" onclick="openLink('https://pvijacxd.github.io/rtisconverter/')">RTIS DATA CONVERTER</div>
-        <div class="box box7" onclick="openLink('https://raipurdivision.github.io/locoreportform/')">LOCO REPORT FORM</div>
-        <div class="box box8" onclick="openLink('https://raipurdivision.github.io/mobileambush/')">MOBILE AMBUSH FORM</div>
-        <div class="box box1" onclick="openLink('https://raipurdivision.github.io/autoabmush/')">AUTO AMBUSH FORM</div>
-        <div class="box box2" onclick="openLink('https://raipurdivision.github.io/awardnominationform/')">AWARD NOMINATION FORM</div>
-        <div class="box box3" onclick="openLink('#')">NEW TAB 1</div>
-        <div class="box box4" onclick="openLink('#')">NEW TAB 2</div>
-        <div class="box box5" onclick="openLink('#')">NEW TAB 3</div>
-        <div class="box box6" onclick="openLink('#')">NEW TAB 4</div>
+        <div class="box box1" onclick="openLink('https://pvijacxd.github.io/CVVRSFORM/')">
+            <span class="box-icon">📋</span>
+            <span>CVVRS FORM</span>
+        </div>
+        <div class="box box2" onclick="openLink('https://pvijacxd.github.io/cvvrsdashboard/')">
+            <span class="box-icon">📊</span>
+            <span>CVVRS DASHBOARD</span>
+        </div>
+        <div class="box box3" onclick="openLink('https://teloc-cell-e-garud.vercel.app/')">
+            <span class="box-icon">🦅</span>
+            <span>E-GARUD</span>
+        </div>
+        <div class="box box4" onclick="openLink('https://raipurdivision.github.io/spmdashboard/')">
+            <span class="box-icon">📈</span>
+            <span>SPM DASHBOARD</span>
+        </div>
+        <div class="box box5" onclick="openMedhaConverter()">
+            <span class="box-icon">🚂</span>
+            <span>MEDHA TEXT TO EXCEL CONVERTER</span>
+        </div>
+        <div class="box box6" onclick="openLink('https://pvijacxd.github.io/rtisconverter/')">
+            <span class="box-icon">🔄</span>
+            <span>RTIS DATA CONVERTER</span>
+        </div>
+        <div class="box box7" onclick="openLink('https://raipurdivision.github.io/locoreportform/')">
+            <span class="box-icon">🚆</span>
+            <span>LOCO REPORT FORM</span>
+        </div>
+        <div class="box box8" onclick="openLink('https://raipurdivision.github.io/mobileambush/')">
+            <span class="box-icon">📱</span>
+            <span>MOBILE AMBUSH FORM</span>
+        </div>
+        <div class="box box1" onclick="openLink('https://raipurdivision.github.io/autoabmush/')">
+            <span class="box-icon">🚦</span>
+            <span>AUTO AMBUSH FORM</span>
+        </div>
+        <div class="box box2" onclick="openLink('https://raipurdivision.github.io/awardnominationform/')">
+            <span class="box-icon">🏆</span>
+            <span>AWARD NOMINATION FORM</span>
+        </div>
+        <div class="box box3" onclick="openLink('https://raipurdivision.github.io/baambushform/')">
+            <img src="https://img.icons8.com/fluency/48/breathalyzer.png" alt="BA" class="box-icon-img">
+            <span>BA AMBUSH FORM</span>
+        </div>
+        <div class="box box4" onclick="openLink('https://raipurdivision.github.io/rsholdingform/')">
+            <span class="box-icon">⏸️</span>
+            <span>RS HOLDING AMBUSH FORM</span>
+        </div>
+        <div class="box box5" onclick="openLink('#')">
+            <span class="box-icon">➕</span>
+            <span>NEW TAB 3</span>
+        </div>
+        <div class="box box6" onclick="openLink('#')">
+            <span class="box-icon">➕</span>
+            <span>NEW TAB 4</span>
+        </div>
     </div>
 
     <div class="footer">
